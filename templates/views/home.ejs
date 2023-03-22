@@ -1,0 +1,27 @@
+<%- include('../partials/header') %>
+
+<h1>Home</h1>
+<h2>Hello <%= user.username %></h2>
+
+<h2>Email: <%= user.email %></h2>
+
+<h2>Favorite Bread: <%= user.favoriteBread %></h2>
+
+<h2>Your Posts:</h2>
+
+<% for (const post of user.posts) {%>
+    <div class="card">
+        <p><%= post.body %></p>
+    </div>
+<% } %>
+
+<h2>Your Cart:</h2>
+
+<% for (const item of user.cart) { %>
+    <div class="item">
+        <h3><%= item.name %></h3>
+        <h3><%= item.description %></h3>
+    </div>
+<% } %>
+
+<%- include('../partials/footer') %>
